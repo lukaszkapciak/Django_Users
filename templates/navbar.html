@@ -1,0 +1,22 @@
+<div class="navbar-fixed-top">
+    <div class="row" style="padding: 10px; background-color: lightgray; margin-bottom: 50px;">
+        <div class="col-md-6">
+            <a href="/books">Home Page</a>
+        </div>
+        {% if user.is_authenticated %}
+            <div class="col-md-6" style="text-align: right;">
+                Hi {{ request.user }}
+                /
+                <a href="/myaccount">My account</a>
+                /
+                <a href="/logout">Logout</a>
+            </div>
+        {% else %}
+            <div class="col-md-6" style="text-align: right;">
+                <a href="/login">Login</a>
+                /
+                <a href="/register">Register</a>
+            </div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    {% if user.is_authenticated %}
+        {% for book in books %}
+            <p>
+                <b>Book{{ book.id }}:</b><br> {{ book.title }} - {{ book.author.last_name }}, {{ book.author.first_name }}
+            </p>
+        {% endfor %}
+    {% else %}
+        Login please.
+    {% endif %}
+
+{% endblock %}
