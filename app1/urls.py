@@ -17,5 +17,5 @@ from django.conf.urls import url
 from .views import Home
 
 urlpatterns = [
-    url(r'', Home, name='home')
+    url(r'^books/', Home, name='home')
 ]

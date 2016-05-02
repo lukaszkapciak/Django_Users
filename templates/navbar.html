@@ -1,7 +1,9 @@
 <div class="navbar-fixed-top">
-    <div class="row" style="padding: 10px; background-color: lightgray; margin-bottom: 50px;">
+    <div class="row" style="padding: 10px; background-color: black; margin-bottom: 50px; color: white;">
         <div class="col-md-6">
-            <a href="/books">Home Page</a>
+            <a href="/">Home Page</a>
+            /
+            <a href="/books">Books</a>
         </div>
         {% if user.is_authenticated %}
             <div class="col-md-6" style="text-align: right;">
@@ -20,3 +22,16 @@
         {% endif %}
     </div>
 </div>
+
+<style type="text/css">
+    a
+	{
+		color: lightgray;
+		text-decoration: none;
+	}
+    a:hover
+    {
+        color: white;
+		text-decoration: none;
+    }
+</style>
