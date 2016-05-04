@@ -12,6 +12,6 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=70)
     author = models.ForeignKey(Author)
-    cover = models.ImageField(upload_to='app1/templates', default='NA')
+    cover = models.FileField(null=True, blank=True)
     def __str__(self):
         return self.title

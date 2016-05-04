@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-    <h1>{{ title }}</h1>
-    {% if user.is_authenticated %}
-        {% for book in books %}
-            <p>
-                <b>Book{{ book.id }}:</b><br> {{ book.title }} - {{ book.author.last_name }}, {{ book.author.first_name }}
-            </p>
-        {% endfor %}
-    {% else %}
-        Login please.
-    {% endif %}
-
+    <div class="col-md-6 col-md-offset-3">
+        <h1>{{ title }}</h1>
+        {% if user.is_authenticated %}
+            {% for book in books %}
+                <p>
+                    <b>Book{{ book.id }}:</b><br/>
+                    {{ book.title }} - {{ book.author.last_name }}, {{ book.author.first_name }}<br/>
+                    {% if book.cover %}
+                        <img src="/media/{{ book.cover }}" class="img-responsive"/>
+                        <img src="{{ MEDIA_URL }}{{ book.cover }}" class="img-responsive"/>
+                    {% endif %}
+                </p>
+            {% endfor %}
+        {% else %}
+            Login please.
+        {% endif %}
+    </div>
 {% endblock %}
