@@ -129,4 +129,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#crispy settings
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+#email settings
+EMAIL_HOST = 'smtp.SOMETHING.com'
+EMAIL_HOST_USER = 'your_email'
+EMAIL_HOST_PASSWORD = 'your_password'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True

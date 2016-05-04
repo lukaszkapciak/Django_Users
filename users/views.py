@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import LoginUserForm, RegisterUserForm
 from django.contrib.auth import (
 login,
@@ -6,7 +6,6 @@ logout,
 get_user_model,
 authenticate
 )
-from django.shortcuts import redirect
 
 # Create your views here.
 
