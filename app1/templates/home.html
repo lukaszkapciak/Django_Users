@@ -11,7 +11,8 @@
                     {{ book.title }} - {{ book.author.last_name }}, {{ book.author.first_name }}<br/>
                     {% if book.cover %}
                         <img src="/media/{{ book.cover }}" class="img-responsive"/>
-                        <img src="{{ MEDIA_URL }}{{ book.cover }}" class="img-responsive"/>
+                        <img src="{{ MEDIA_URL }}{{ book.cover }}" class="img-responsive"/>{#additionnal lane in context_processors#}
+                        <img src="{{ book.cover.url }}" class="img-responsive"/>
                     {% endif %}
                 </p>
             {% endfor %}
